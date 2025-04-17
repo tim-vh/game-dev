@@ -5,7 +5,7 @@ date:   2025-04-14 09:34:27 +0200
 categories: Luanti
 ---
 
-Maak een basis game in Luanti die werkt met de standaar mapgen.
+Maak een basis game in Luanti die werkt met de standaard mapgen.
 
 ## Benodigdheden
 
