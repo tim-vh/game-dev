@@ -7,15 +7,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 nl: json
             });
 
-            scratchblocks.renderMatching('code.language-scratch-nl', {
+            scratchblocks.renderMatching('code.language-scratch', {
                 style:     'scratch3',
-                languages: ['nl'],
-                scale: 1,
-            });
-
-            scratchblocks.renderMatching('code.language-scratch-en', {
-                style:     'scratch3',
-                languages: ['en'], 
+                languages: ['nl', 'en'],
                 scale: 1,
             });
         });
