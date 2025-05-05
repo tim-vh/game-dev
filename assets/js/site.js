@@ -10,7 +10,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
             scratchblocks.renderMatching('code.language-scratch', {
                 style:     'scratch3',
                 languages: ['nl', 'en'],
-                scale: 1,
+                scale: 0.8,
             });
+
+            scratchblocks.renderMatching("code.language-scratch-inline", {
+                inline: true,
+                style:     'scratch3',
+                scale: 0.6,
+                languages: ['nl', 'en']
+              });
         });
 });S
