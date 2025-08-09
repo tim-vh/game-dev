@@ -14,7 +14,7 @@ Maak een basis game in Luanti die werkt met de standaard mapgen.
 
 ## Game toevoegen
 
-Voeg een nieuwe map toe in de `/games/` map van luanti bijvoorbeeld `mygame`. Open de map in VsCode en voer het commando (met F1 toets) `Luanti Tools: New Game Project` uit.
+Voeg een map `/games/` toe aan de luanti map als deze nog niet bestaat. Voeg daarna een nieuwe map toe in de `/games/` map van luanti bijvoorbeeld `mygame`. Open de map in VsCode en voer het commando (met F1 toets) `Luanti Tools: New Game Project` uit.
 
 ## Mod toevoegen
 
