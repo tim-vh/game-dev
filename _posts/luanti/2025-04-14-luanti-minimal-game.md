@@ -2,7 +2,10 @@
 layout: single
 title:  "Luanti minimal game"
 date:   2025-04-14 09:34:27 +0200
-categories: Luanti
+categories: luanti
+excerpt: Maak een basis game in Luanti die werkt met de standaard mapgen.
+header:
+  teaser: /assets/images/luanti/luanti-minimal-game.png
 ---
 
 Maak een basis game in Luanti die werkt met de standaard mapgen.

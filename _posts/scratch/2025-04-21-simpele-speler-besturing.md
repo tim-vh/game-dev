@@ -2,8 +2,11 @@
 layout: single
 title:  "Simpele speler besturing in scratch"
 date:   2025-04-21 10:46:00 +0200
-categories: Scratch
+categories: scratch
 tags: Scratch besturing
+excerpt: Laat de speler bewegen met de pijltjestoetsen.
+header:
+  teaser: /assets/images/scratch/scratch-simpele-besturing.png
 ---
 
 Laat de speler bewegen met de pijltjestoetsen.

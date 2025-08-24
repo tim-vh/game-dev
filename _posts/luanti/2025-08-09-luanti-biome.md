@@ -2,7 +2,10 @@
 layout: single
 title:  "Luanti biome toevoegen"
 date:   2025-08-09 11:00:00 +0200
-categories: Luanti
+categories: luanti
+excerpt: Voeg een eigen biome toe aan je Luanti-game.
+header:
+  teaser: /assets/images/luanti/luanti-biome.png
 ---
 
 Voeg een eigen biome toe aan je Luanti-game. In deze tutorial maak je een grasland-biome en een bijbehorende grass node.

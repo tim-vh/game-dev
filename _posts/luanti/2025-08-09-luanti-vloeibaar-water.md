@@ -2,7 +2,10 @@
 layout: single
 title:  "Luanti vloeibaar water"
 date:   2025-08-09 11:11:00 +0200
-categories: Luanti
+categories: luanti
+excerpt: Maak water nodes vloeibaar
+header:
+  teaser: /assets/images/luanti/luanti_logo.svg
 ---
 
 ## Texture toevoegen
@@ -36,3 +39,7 @@ core.register_node("mymod:water", {
 
 ## Resultaat
 Start je game opnieuw. Waterblokken gedragen zich nu als vloeibaar water.
+
+## Meer info
+
+Bekijk het [minetest modding book](https://rubenwardy.com/minetest_modding_book/en/items/node_drawtypes.html#liquid-nodes) voor meer details.

@@ -2,10 +2,13 @@
 layout: single
 title:  "Luanti basic entity toevoegen"
 date:   2025-06-23 11:00:00 +0200
-categories: Luanti
+categories: luanti
+excerpt: Voeg een entity toe aan een luanti game
+header:
+  teaser: /assets/images/luanti/luanti-basic-entity.png
 ---
 
-In deze tutorial leer je hoe je een Minetest-mod maakt die een basisentiteit registreert en een chatcommand toevoegt om deze te spawnen.
+In deze tutorial leer je hoe je een Luanti mod maakt die een basisentiteit registreert en een chatcommand toevoegt om deze te spawnen.
 
 ## Mod toevoegen
 
