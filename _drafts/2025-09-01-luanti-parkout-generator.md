@@ -8,90 +8,57 @@ header:
   teaser: /assets/images/luanti/TODO.png
 ---
 
-## Voeg een nieuwe mod toe
+Maak een mod in Luanti die automatisch een parkour genereert wanneer je het chatcommando `start` gebruikt.
+
+## Benodigdheden
+
+-   [Visual Studio Code](https://code.visualstudio.com/)
+-   [Luanti Tools extension](https://marketplace.visualstudio.com/items/?itemName=GreenXenith.minetest-tools)
+
+## Mod toevoegen
+
+Voeg een nieuwe map toe in de `mods` map van je game, bijvoorbeeld `parkour`. Open deze map in VSCode en voer het commando `Luanti Tools: New Mod Project` uit.
+
+Maak een `mod.conf` bestand aan met de volgende inhoud:
 
 ```
 name = parkour
-description = 
+description = Genereert een parkour parcours
 depends = default
-optional_depends = 
+optional_depends =
 ```
 
 ## Chatcommando toevoegen
 
+Voeg in `init.lua` het volgende chatcommando toe. Hiermee kun je het parkour genereren door `/start` in te typen in de chat.
+
 ```lua
 core.register_chatcommand("start", {
     func = function(name, param)
+        -- Parkour genereren (zie volgende stap)
         return true, "Game started!"
     end
 })
-```
-
-## Genereer lava
-
-```lua
-    core.register_chatcommand("start", {
-        func = function(name, param)
-
-        -- Generate lava
-        for x=-10,10
-        do
-            for z=-10,200
-            do
-                core.set_node({x = x, y = 1, z = z}, {name = "default:lava_source"})
-            end
-
-        end
-
-        return true, "Game started!"
-    end
-})
-```
-
-## Speler respawnen
-
-```lua
-core.register_on_respawnplayer(function(player)
-    player:set_pos({x = 0, y = 2, z = 0})
-    
-    player:set_look_horizontal(0)    
-    player:set_look_vertical(0)
-
-    player:set_hp(player:get_properties().hp_max)
-
-    return true -- Disable default spawn algorithm
-end)
-```
-
-```lua
-    -- spawnpoint
-    core.set_node({x = 0, y = 1, z = 0 }, {name = "default:stone"})
-
-    local player = core.get_player_by_name(name)
-    player:respawn()
 ```
 
 ## Parkour genereren
 
-### Variabelen om positie pad bij te houden
+Vervang de commentaarregel `-- Parkour genereren` door onderstaande code. Dit voorbeeld maakt een eenvoudig pad van stenen blokken:
 
 ```lua
 local x = 0
 local y = 1
 local z = 1
-```
 
-### Pad rechtdoor
-
-```lua
-for i=1, 10 do
+for i=1, 20 do
     core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
     z = z + 1
 end
 ```
 
-### Trap
+Je kunt variaties toevoegen, zoals trappen of gaten, bijvoorbeeld:
 
+**Trap omhoog:**
 ```lua
 for i=1, 10 do
     core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
@@ -100,32 +67,17 @@ for i=1, 10 do
 end
 ```
 
-### Pad met gaten
-
+**Pad met gaten:**
 ```lua
 for i=1, 10 do
-do
-    core.set_node({x = x, y = y, z = z }, {name = "default:stone"})
+    core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
     z = z + 3
 end
 ```
 
-### Pad met random gaten
-
-```lua
-for i=1, 10 do
-do
-    local randomx = math.random(-2, 2)
-    core.set_node({x = x + randomx, y = y, z = z }, {name = "default:stone"})
-    z = z + 2
-end
-```
-
-### Slangvormig pas
-
+**Slangvormig pad:**
 ```lua
 for i=1, 50 do
-
     if z % 5 == 0 then
         if x < 0 then
             while x < 5 do
@@ -136,11 +88,55 @@ for i=1, 50 do
             while x > -5 do
                 core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
                 x = x - 1
-            end     
+            end
         end
     end
-
     core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
     z = z + 1
 end
 ```
+
+## Lava genereren
+
+Wil je het parkour uitdagender maken? Voeg lava toe onder het pad:
+
+```lua
+for x=-10,10 do
+    for z=-10,200 do
+        core.set_node({x = x, y = 1, z = z}, {name = "default:lava_source"})
+    end
+end
+```
+
+## Speler respawnen
+
+Laat de speler bij het begin van het parkour respawnen:
+
+```lua
+core.register_on_respawnplayer(function(player)
+    player:set_pos({x = 0, y = 2, z = 0})
+
+    -- Kijk is de richting van het parkour
+    player:set_look_horizontal(0)
+    player:set_look_vertical(0)
+
+    -- Zet Hp naar max
+    player:set_hp(player:get_properties().hp_max)
+    
+    return true -- Disable default spawn algorithm
+end)
+```
+
+Om de speler direct te respawnen na het starten van het parkour:
+
+```lua
+core.set_node({x = 0, y = 1, z = 0 }, {name = "default:stone"})
+local player = core.get_player_by_name(name)
+player:respawn()
+```
+
+## Start je parkour
+
+Start je game in Luanti, typ `/start` in de chat en probeer het parkour uit!
+
+Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour-generator](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour-generator)
