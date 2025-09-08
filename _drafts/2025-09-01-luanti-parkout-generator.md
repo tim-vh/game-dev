@@ -5,7 +5,7 @@ date:   2025-09-01 11:47:00 +0200
 categories: luanti
 excerpt: Genereer een parkour in Luanti.
 header:
-  teaser: /assets/images/luanti/TODO.png
+  teaser: /assets/images/luanti/luanti-parkour.png
 ---
 
 Maak een mod in Luanti die automatisch een parkour genereert wanneer je het chatcommando `start` gebruikt.
@@ -23,7 +23,7 @@ Maak een `mod.conf` bestand aan met de volgende inhoud:
 
 ```
 name = parkour
-description = Genereert een parkour parcours
+description = Genereert een parkour
 depends = default
 optional_depends =
 ```
@@ -58,7 +58,7 @@ end
 
 Je kunt variaties toevoegen, zoals trappen of gaten, bijvoorbeeld:
 
-**Trap omhoog:**
+### Trap omhoog
 ```lua
 for i=1, 10 do
     core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
@@ -67,7 +67,7 @@ for i=1, 10 do
 end
 ```
 
-**Pad met gaten:**
+### Pad met gaten
 ```lua
 for i=1, 10 do
     core.set_node({x = x, y = y, z = z}, {name = "default:stone"})
@@ -75,7 +75,16 @@ for i=1, 10 do
 end
 ```
 
-**Slangvormig pad:**
+### Pad met random gaten
+```lua
+for i=1, 10 do
+    local randomx = math.random(-2, 2)
+    core.set_node({x = x + randomx, y = y, z = z }, {name = "default:stone"})
+    z = z + 2
+end
+```
+
+### Slangvormig pad
 ```lua
 for i=1, 50 do
     if z % 5 == 0 then
@@ -98,7 +107,7 @@ end
 
 ## Lava genereren
 
-Wil je het parkour uitdagender maken? Voeg lava toe onder het pad:
+Wil je het parkour uitdagender maken? Voeg lava toe onder het pad door de volgende code toe te voegen aan het begin van het `start` chatcommando:
 
 ```lua
 for x=-10,10 do
@@ -127,7 +136,7 @@ core.register_on_respawnplayer(function(player)
 end)
 ```
 
-Om de speler direct te respawnen na het starten van het parkour:
+Om de speler direct te respawnen na het starten van het parkour kun je de volgende code toevoegen aan het `start` chatcommando:
 
 ```lua
 core.set_node({x = 0, y = 1, z = 0 }, {name = "default:stone"})
@@ -139,4 +148,8 @@ player:respawn()
 
 Start je game in Luanti, typ `/start` in de chat en probeer het parkour uit!
 
-Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour-generator](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour-generator)
+> 💡Tip: Het genereren van het parkour werkt het beste als de wereld helemaal vlak is. Om een vlakke wereld te krijgen kun je  de `flat` mapgen kiezen of een mod installeren die de wereld plat maakt.
+
+Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour)
+
+![Luanti parkour](/assets/images/luanti/luanti-parkour.png)

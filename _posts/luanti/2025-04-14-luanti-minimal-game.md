@@ -62,6 +62,6 @@ core.register_alias("mapgen_river_water_source", "mymod:river_water")
 
 Nu kun je een nieuwe game starten in Luanti
 
-![Luanti minimal game](/assets/images/luanti/luanti-minimal-game.png)
-
 Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/minimal-game](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/minimal-game)
+
+![Luanti minimal game](/assets/images/luanti/luanti-minimal-game.png)
