@@ -5,7 +5,7 @@ date:   2025-09-01 11:47:00 +0200
 categories: luanti
 excerpt: Genereer een parkour in Luanti.
 header:
-  teaser: /assets/images/luanti/luanti-parkour.png
+  teaser: /assets/teasers/luanti-parkour.png
 ---
 
 Maak een mod in Luanti die automatisch een parkour genereert wanneer je het chatcommando `start` gebruikt.

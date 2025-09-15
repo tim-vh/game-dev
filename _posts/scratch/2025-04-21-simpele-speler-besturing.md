@@ -6,7 +6,7 @@ categories: scratch
 tags: Scratch besturing
 excerpt: Laat de speler bewegen met de pijltjestoetsen.
 header:
-  teaser: /assets/images/scratch/scratch-simpele-besturing.png
+  teaser: /assets/teasers/scratch-simpele-besturing.png
 ---
 
 Laat de speler bewegen met de pijltjestoetsen.

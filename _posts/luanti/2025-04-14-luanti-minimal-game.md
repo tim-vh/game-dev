@@ -5,7 +5,7 @@ date:   2025-04-14 09:34:27 +0200
 categories: luanti
 excerpt: Maak een basis game in Luanti die werkt met de standaard mapgen.
 header:
-  teaser: /assets/images/luanti/luanti-minimal-game.png
+  teaser: /assets/teasers/luanti-minimal-game.png
 ---
 
 Maak een basis game in Luanti die werkt met de standaard mapgen.
@@ -33,22 +33,16 @@ Registreer vervolgens de nodes in de `init.lua` file:
 core.register_node("basic:stone", {
     description = "stone",
     tiles = {"stone.png"},
-    is_ground_content = true,
-    groups = {cracky=3, stone=1}
 })
 
 core.register_node("basic:water", {
     description = "water",
     tiles = {"water.png"},
-    is_ground_content = true,
-    groups = {}
 })
 
 core.register_node("basic:river_water", {
     description = "river water",
     tiles = {"river_water.png"},
-    is_ground_content = true,
-    groups = {}
 })
 ```
 
