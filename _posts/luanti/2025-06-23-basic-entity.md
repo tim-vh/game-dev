@@ -61,4 +61,4 @@ Met core.register_chatcommand wordt een chatcommand toegevoegd. Wanneer een spel
 
 ![Luanti minimal game](/assets/images/luanti/luanti-basic-entity.png)
 
-Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/basic-enity-mod](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/basic-enity-mod)
+Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/mods/basic-enity-mod](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/mods/basic-enity-mod)

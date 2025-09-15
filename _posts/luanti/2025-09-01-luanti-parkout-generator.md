@@ -150,6 +150,6 @@ Start je game in Luanti, typ `/start` in de chat en probeer het parkour uit!
 
 > 💡Tip: Het genereren van het parkour werkt het beste als de wereld helemaal vlak is. Om een vlakke wereld te krijgen kun je  de `flat` mapgen kiezen of een mod installeren die de wereld plat maakt.
 
-Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/parkour)
+Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/mods/parkour](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/mods/parkour)
 
 ![Luanti parkour](/assets/images/luanti/luanti-parkour.png)
