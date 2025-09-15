@@ -9,6 +9,8 @@ luanti:
     children:
       - title: "Luanti Modding Book"
         url: "https://rubenwardy.com/minetest_modding_book/en/index.html"
+      - title: "Luanti Api documentation"
+        url: "https://api.luanti.org/"
 
 scratch:
   - title: "Links"
