@@ -1,12 +1,16 @@
 main:
   - title: "Scratch"
     url: /scratch/
+  - title: "Makecode Arcade"
+    url: /makecode-arcade/
   - title: "Luanti"
     url: /luanti/
 
 luanti:
   - title: "Links"
     children:
+      - title: "Luanti website"
+        url: "https://www.luanti.org"
       - title: "Luanti Modding Book"
         url: "https://rubenwardy.com/minetest_modding_book/en/index.html"
       - title: "Luanti Api documentation"
@@ -15,5 +19,13 @@ luanti:
 scratch:
   - title: "Links"
     children:
-      - title: "Raspberrypi scratch projecten"
+      - title: "Scratch website"
+        url: "https://scratch.mit.edu"
+      - title: "Raspberry pi scratch projecten"
         url: "https://projects.raspberrypi.org/nl-NL/technology/scratch"
+
+makecode-arcade:
+  - title: "Links"
+    children:
+      - title: "Makecode arcade website"
+        url: "https://arcade.makecode.com"

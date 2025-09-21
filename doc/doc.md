@@ -11,4 +11,4 @@ If you want to show draft versions use:
 
 # Standards
 
-Teaser size: 150x80 px
+Teaser size: 800x427 px (old: 150x80 px)
