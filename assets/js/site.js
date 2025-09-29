@@ -20,4 +20,4 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 languages: ['nl', 'en']
               });
         });
-});S
+});
