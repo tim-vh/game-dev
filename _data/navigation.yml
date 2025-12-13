@@ -5,6 +5,8 @@ main:
     url: /makecode-arcade/
   - title: "Luanti"
     url: /luanti/
+  - title: "Roblox"
+    url: /roblox/
 
 luanti:
   - title: "Links"
@@ -29,3 +31,13 @@ makecode-arcade:
     children:
       - title: "Makecode arcade website"
         url: "https://arcade.makecode.com"
+
+roblox:
+  - title: "Links"
+    children:
+      - title: "Roblox creator hub"
+        url: "https://create.roblox.com/"
+      - title: "Beginner scripting tutorials (youtube)"
+        url: "https://www.youtube.com/watch?v=9MUgLaF22Yo&list=PLQ1Qd31Hmi3W_CGDzYOp7enyHlOuO3MtC"
+      - title: "Advanced scripting tutorials (youtube)"
+        url: "https://www.youtube.com/watch?v=dRgvhjr2Dx0&list=PLQ1Qd31Hmi3WKkVHnadvhOOjz04AuMYAf"
