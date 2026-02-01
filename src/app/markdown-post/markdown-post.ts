@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit, signal } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import frontMatter from 'front-matter';
 import { MarkdownComponent } from "ngx-markdown";
 
@@ -12,17 +11,15 @@ import { MarkdownComponent } from "ngx-markdown";
 })
 export class MarkdownPost implements OnInit {
 
+  @Input() folderName: string = '';
+  @Input() postName: string = '';
+  
   private httpClient = inject(HttpClient);
-  private activatedRoute = inject(ActivatedRoute);
 
   protected readonly content = signal('');
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      const postName = params['postName'];
-      const folderName = params['folderName'];
-      this.loadMarkdown(folderName, postName);
-    });
+    this.loadMarkdown(this.folderName, this.postName)
   }
 
   private loadMarkdown(folderName:string , pageName: string) {
