@@ -1,0 +1,9 @@
+[
+    {
+        "title": "Luanti minimal game",
+        "data": "2025-04-14 09:34:27 +0200",
+        "categories": ["luanti"],
+        "excerpt": "Maak een basis game in Luanti die werkt met de standaard mapgen.",
+        "teaser": "/assets/teasers/luanti-minimal-game.png"
+    }
+]
