@@ -1,26 +1,12 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MarkdownComponent } from "ngx-markdown";
-import frontMatter from 'front-matter';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MarkdownComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App implements OnInit {
+export class App {
 
-  private httpClient = inject(HttpClient);
-  protected readonly content = signal('');
-
-  ngOnInit(): void {
-
-    this.httpClient.get('markdown/test.md',{responseType: 'text'}).subscribe((markdown) =>{
-      const parseResult = frontMatter(markdown);
-      this.content.set(parseResult.body);
-    });
-
-  }
 }
