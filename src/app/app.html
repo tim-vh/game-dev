@@ -1,1 +1,14 @@
+<div id="header" class="flex flex-row p-8 border-b border-gray-200 ">
+    <nav class="ml-30">
+        <a class="text-xl font-bold text-gray-500" href="/">Tim-vh.dev</a>
+    </nav>
+    <ul class="flex flex-row ml-auto text-xl text-gray-500 space-x-8 mr-30">
+        @for (menuItem of menuItems; track $index) {
+            <li><a class="hover:underline decoration-3 underline-offset-4" [href]="menuItem.url">{{menuItem.title}}</a></li>
+        }
+        <!-- <li><a class="hover:underline" href="/makecode-arcade">Makecode Arcade</a></li>
+        <li><a class="hover:underline" href="/luanti">Luanti</a></li>
+        <li><a class="hover:underline" href="/roblox">Roblox</a></li> -->
+    </ul>
+</div>
 <router-outlet />

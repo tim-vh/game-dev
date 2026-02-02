@@ -8,5 +8,10 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-
+  menuItems = [
+    {title: 'Scratch', url: '/scratch'},
+    {title: 'Makecode Arcade', url: '/makecode-arcade'},
+    {title: 'Luanti', url: '/luanti'},
+    {title: 'Roblox', url: '/roblox'}
+  ]
 }
