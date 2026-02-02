@@ -4,14 +4,21 @@
   "description": "",
   "license": "ISC",
   "author": "",
-  "type": "commonjs",
   "main": "./dist/index.js",
-  "bin": { "markdown-indexer": "./dist/index.js" },
+  "bin": {
+    "markdown-indexer": "./dist/index.js"
+  },
   "scripts": {
     "build": "npx tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "front-matter": "^4.0.2",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.0",
+    "i": "^0.3.7",
+    "npm": "^11.8.0"
   }
 }

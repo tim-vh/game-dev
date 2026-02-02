@@ -1,2 +1,52 @@
 #!/usr/bin/env node
-console.log('test from markdown indexer')
+
+import fs from 'fs';
+import path from 'path';
+import frontMatter from 'front-matter';
+import { exit } from 'process';
+
+if (process.argv.length < 4) {
+    console.log("Please provide 'input path' and 'output file' arguments")
+    exit
+}
+
+const inputPath = getAbsolutePath(process.argv[2] ?? '')
+const outputFile = getAbsolutePath(process.argv[3] ?? '')
+
+var files = getMarkdownFiles(inputPath)
+const markdownMetaData: any[] = getMarkdownMetaData();
+
+fs.writeFileSync(outputFile, JSON.stringify(markdownMetaData));
+
+
+function getMarkdownMetaData(): any[] {
+    const markdownMetaData: any[] = []
+
+    files.forEach((file) => {
+        const content = fs.readFileSync(file, 'utf-8');
+        const parseResult = frontMatter(content);
+
+        const markdownFile = path.relative(inputPath, file).replace('\\', '/')
+        const metaData = { file: markdownFile, attributes: parseResult.attributes }
+        markdownMetaData.push(metaData);
+    });
+
+    return markdownMetaData
+}
+
+function getMarkdownFiles(dir: string): string[] {
+  const files = fs.readdirSync(dir, {recursive: true, withFileTypes: true});
+  return files
+    .filter(file => file.isFile() && file.name.endsWith('.md'))
+    .map(file => path.join(file.parentPath, file.name));
+}
+
+function getAbsolutePath(pathArgument: string) : string {
+    if (!path.isAbsolute(pathArgument))
+    {
+        pathArgument = path.join(process.cwd(), pathArgument)
+    }
+    
+    console.log(pathArgument)
+    return pathArgument
+}
