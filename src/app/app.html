@@ -6,9 +6,8 @@
         @for (menuItem of menuItems; track $index) {
             <li><a class="hover:underline decoration-3 underline-offset-4" [href]="menuItem.url">{{menuItem.title}}</a></li>
         }
-        <!-- <li><a class="hover:underline" href="/makecode-arcade">Makecode Arcade</a></li>
-        <li><a class="hover:underline" href="/luanti">Luanti</a></li>
-        <li><a class="hover:underline" href="/roblox">Roblox</a></li> -->
     </ul>
 </div>
-<router-outlet />
+<div id="content" class="mx-40 mt-4">
+    <router-outlet />
+</div>
