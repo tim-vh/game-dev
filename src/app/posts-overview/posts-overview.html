@@ -1,9 +1,9 @@
 <ul>
     @for (post of postsMetadata(); track $index) {
         <li>
-            <img src="test.png" alt="teaser" />
-            <h2>{{post.title}}</h2>
-            <p>excerpt</p>
+            <img [src]="post.attributes.header.teaser" alt="teaser for {{post.attributes.title}}" />
+            <h2>{{post.attributes.title}}</h2>
+            <p>{{post.attributes.excerpt}}</p>
         </li>
     }
 
