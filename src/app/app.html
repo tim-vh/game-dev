@@ -1,12 +1,13 @@
-<header class="flex flex-row p-8 border-b border-gray-200 ">
-    <nav class="ml-30">
+<header class="p-8 border-b border-gray-200 ">
+    <nav class="ml-32">
         <a class="text-xl font-bold text-gray-500" href="/">Tim-vh.dev</a>
+    
+        <ul class="flex flex-row text-xl text-gray-500 space-x-8 mr-30 mt-2">
+            @for (menuItem of menuItems; track $index) {
+                <li><a class="hover:underline decoration-3 underline-offset-4" [href]="menuItem.url">{{menuItem.title}}</a></li>
+            }
+        </ul>
     </nav>
-    <ul class="flex flex-row ml-auto text-xl text-gray-500 space-x-8 mr-30">
-        @for (menuItem of menuItems; track $index) {
-            <li><a class="hover:underline decoration-3 underline-offset-4" [href]="menuItem.url">{{menuItem.title}}</a></li>
-        }
-    </ul>
 </header>
 <main class="mx-40 mt-4">
     <router-outlet />
