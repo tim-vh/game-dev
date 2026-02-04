@@ -1,4 +1,4 @@
-<div id="header" class="flex flex-row p-8 border-b border-gray-200 ">
+<header class="flex flex-row p-8 border-b border-gray-200 ">
     <nav class="ml-30">
         <a class="text-xl font-bold text-gray-500" href="/">Tim-vh.dev</a>
     </nav>
@@ -7,7 +7,12 @@
             <li><a class="hover:underline decoration-3 underline-offset-4" [href]="menuItem.url">{{menuItem.title}}</a></li>
         }
     </ul>
-</div>
-<div id="content" class="mx-40 mt-4">
+</header>
+<main class="mx-40 mt-4">
     <router-outlet />
-</div>
+</main>
+<footer class=" bg-gray-100 pt-10 pb-10 mt-5">
+    <div class="text-gray-700 ml-30">
+        © 2025 <a href="https://tim-vh.dev">Tim-vh.dev</a>
+    </div>
+</footer>
