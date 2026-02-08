@@ -1,10 +1,10 @@
 <h1 class="text-2xl text-gray-600 font-bold">Recent Posts</h1>
 <div class="grid grid-cols-4 gap-4">
     @for (post of postsMetadata(); track $index) {
-        <article class="flex flex-col content-center">
+        <article class="flex flex-col content-center relative">
             <img class="w-full rounded-sm" [src]="post.attributes.header.teaser" alt="teaser for {{post.attributes.title}}" />
             <h1 class="text-xl text-cyan-700 underline">
-                <a class="" href="/posts/{{post.folder}}/{{post.fileName}}">{{post.attributes.title}}</a>
+                <a class="before:absolute before:inset-0" href="/posts/{{post.folder}}/{{post.fileName}}">{{post.attributes.title}}</a>
             </h1>
             <p>{{post.attributes.excerpt}}</p>
         </article>
