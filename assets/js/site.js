@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    fetch('/assets/js/scratchblocks-3.6.4/nl.json')
+    fetch('/data/scratchblocks/nl.json')
         .then(response => response.json())
         .then(json => {
 

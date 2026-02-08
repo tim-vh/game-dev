@@ -26,7 +26,9 @@
             ],
             "scripts": [
               "node_modules/prismjs/prism.js",
-              "node_modules/prismjs/components/prism-lua.min.js"
+              "node_modules/prismjs/components/prism-lua.min.js",
+              "assets/js/site.js",
+              "assets/js/scratchblocks-3.6.4/scratchblocks.min.js"
             ],
             "styles": [
               "src/styles.css",
