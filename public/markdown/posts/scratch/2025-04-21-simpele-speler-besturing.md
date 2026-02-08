@@ -56,4 +56,5 @@ maak draaistijl [link-rechts v]
 ## Voorbeeld
 
 <iframe src="https://scratch.mit.edu/projects/1163135045/embed" allowtransparency="true" width="485" height="402" frameborder="0" scrolling="no" allowfullscreen></iframe>
+
 [Bekijk op scratch](https://scratch.mit.edu/projects/1163135045/editor/)
