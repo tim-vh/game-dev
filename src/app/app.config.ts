@@ -1,15 +1,18 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, SecurityContext } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 
 import { routes } from './app.routes';
-import { provideMarkdown } from 'ngx-markdown';
+import { provideMarkdown, SANITIZE } from 'ngx-markdown';
 import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes, withComponentInputBinding()),
-    provideMarkdown(),
+    provideMarkdown({
+      sanitize: {provide: SANITIZE,
+      useValue: SecurityContext.NONE }
+    }),
     provideHttpClient()
   ]
 };
