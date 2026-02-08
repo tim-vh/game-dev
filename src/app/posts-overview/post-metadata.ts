@@ -1,5 +1,7 @@
 export interface PostMetadata {
-  file: string
+ fullPath: string
+  folder: string
+  fileName:string
   attributes: Attributes
 }
 

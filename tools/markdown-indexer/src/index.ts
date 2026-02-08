@@ -7,7 +7,7 @@ import { exit } from 'process';
 
 if (process.argv.length < 4) {
     console.log("Please provide 'input path' and 'output file' arguments")
-    exit
+    exit(1)
 }
 
 const inputPath = getAbsolutePath(process.argv[2] ?? '')
@@ -26,8 +26,10 @@ function getMarkdownMetaData(): any[] {
         const content = fs.readFileSync(file, 'utf-8');
         const parseResult = frontMatter(content);
 
-        const markdownFile = path.relative(inputPath, file).replace('\\', '/')
-        const metaData = { file: markdownFile, attributes: parseResult.attributes }
+        const fullPath = path.relative(inputPath, file).replace('\\', '/')
+        const parsedPath = path.parse(fullPath);
+        const fileName = parsedPath
+        const metaData = { fullPath: fullPath, folder: parsedPath.dir, fileName: parsedPath.name, attributes: parseResult.attributes }
         markdownMetaData.push(metaData);
     });
 

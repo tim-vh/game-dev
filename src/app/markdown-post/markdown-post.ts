@@ -22,8 +22,8 @@ export class MarkdownPost implements OnInit {
     this.loadMarkdown(this.folderName, this.postName)
   }
 
-  private loadMarkdown(folderName:string , pageName: string) {
-    this.httpClient.get(`markdown/posts/${folderName}/${pageName}.md`,{responseType: 'text'}).subscribe((markdown) =>{
+  private loadMarkdown(folderName:string , postName: string) {
+    this.httpClient.get(`markdown/posts/${folderName}/${postName}.md`,{responseType: 'text'}).subscribe((markdown) =>{
       const parseResult = frontMatter(markdown);
       this.content.set(parseResult.body);
 
