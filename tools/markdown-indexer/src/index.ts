@@ -20,7 +20,7 @@ fs.writeFileSync(outputFile, JSON.stringify(markdownMetaData));
 
 
 function getMarkdownMetaData(): any[] {
-    const markdownMetaData: any[] = []
+    let markdownMetaData: any[] = []
 
     files.forEach((file) => {
         const content = fs.readFileSync(file, 'utf-8');
@@ -32,6 +32,8 @@ function getMarkdownMetaData(): any[] {
         const metaData = { fullPath: fullPath, folder: parsedPath.dir, fileName: parsedPath.name, attributes: parseResult.attributes }
         markdownMetaData.push(metaData);
     });
+
+    markdownMetaData = markdownMetaData.sort((m1, m2) => m1.attributes.date < m2.attributes.date ? 1 : -1);
 
     return markdownMetaData
 }
