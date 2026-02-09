@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import { PostMetadata } from '../post-metadata';
 
 @Component({
@@ -7,19 +7,8 @@ import { PostMetadata } from '../post-metadata';
   templateUrl: './posts-overview.html',
   styleUrl: './posts-overview.css',
 })
-export class PostsOverview implements OnInit {
+export class PostsOverview  {
 
-  private httpClient = inject(HttpClient);
+  @Input() postsMetaData: PostMetadata[] = [];
 
-  protected readonly postsMetadata = signal<PostMetadata[]>([]);
-
-  ngOnInit(): void {
-    this.loadPostsMetadata();
-  }
-
-  private loadPostsMetadata() {
-    this.httpClient.get<PostMetadata[]>(`data/markdown/posts.json`).subscribe((postMetadata) => {
-      this.postsMetadata.set(postMetadata);
-    });
-  }
 }

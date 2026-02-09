@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import { PostDetails } from './posts/post-details/post-details';
-import { PostsOverview } from './posts/posts-overview/posts-overview';
+import { HomePage } from './pages/home-page/home-page';
 
 export const routes: Routes = [
     {
         path: '',
-        component: PostsOverview
+        component: HomePage
     },
     {
         path: 'posts/:folderName/:postName',
