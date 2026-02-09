@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { PostMetadata } from './post-metadata';
+import { PostMetadata } from '../post-metadata';
 
 @Component({
   selector: 'app-posts-overview',
@@ -18,7 +18,7 @@ export class PostsOverview implements OnInit {
   }
 
   private loadPostsMetadata() {
-    this.httpClient.get<PostMetadata[]>(`metadata/posts.json`).subscribe((postMetadata) => {
+    this.httpClient.get<PostMetadata[]>(`data/markdown/posts.json`).subscribe((postMetadata) => {
       this.postsMetadata.set(postMetadata);
     });
   }

@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "prebuild": "ts-node ./tools/markdown-indexer/src/index.ts ./public/markdown/posts/ ./public/metadata/posts.json",
+    "prebuild": "ts-node ./tools/markdown-indexer/src/index.ts ./public/markdown/posts/ ./public/data/markdown/posts.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

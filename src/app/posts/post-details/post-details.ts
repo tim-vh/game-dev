@@ -2,15 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, Input, OnInit, signal } from '@angular/core';
 import frontMatter from 'front-matter';
 import { MarkdownComponent } from "ngx-markdown";
-import { Attributes } from '../posts-overview/post-metadata';
+import { Attributes } from '../post-metadata';
 
 @Component({
-  selector: 'app-markdown-post',
+  selector: 'app-post-details',
   imports: [MarkdownComponent],
-  templateUrl: './markdown-post.html',
-  styleUrl: './markdown-post.css',
+  templateUrl: './post-details.html',
+  styleUrl: './post-details.css',
 })
-export class MarkdownPost implements OnInit {
+export class PostDetails implements OnInit {
 
   @Input() folderName: string = '';
   @Input() postName: string = '';

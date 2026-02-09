@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { MarkdownPost } from './markdown-post/markdown-post';
-import { PostsOverview } from './posts-overview/posts-overview';
+import { PostDetails } from './posts/post-details/post-details';
+import { PostsOverview } from './posts/posts-overview/posts-overview';
 
 export const routes: Routes = [
     {
@@ -9,6 +9,6 @@ export const routes: Routes = [
     },
     {
         path: 'posts/:folderName/:postName',
-        component: MarkdownPost
+        component: PostDetails
     }
 ];

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MarkdownPost } from './markdown-post';
+import { PostDetails } from './post-details';
 
 describe('MarkdownPost', () => {
-  let component: MarkdownPost;
-  let fixture: ComponentFixture<MarkdownPost>;
+  let component: PostDetails;
+  let fixture: ComponentFixture<PostDetails>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MarkdownPost]
+      imports: [PostDetails]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(MarkdownPost);
+    fixture = TestBed.createComponent(PostDetails);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
