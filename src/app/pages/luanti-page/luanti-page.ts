@@ -6,19 +6,19 @@ import { LinksAside } from "../../links/links-aside/links-aside";
 import { LinksAsideItem } from "../../links/links-aside-item/links-aside-item";
 
 @Component({
-  selector: 'app-scratch-page',
+  selector: 'app-luanti-page',
   imports: [PostsOverview, LinksAside, LinksAsideItem],
-  templateUrl: './scratch-page.html',
-  styleUrl: './scratch-page.css',
+  templateUrl: './luanti-page.html',
+  styleUrl: './luanti-page.css',
 })
-export class ScratchPage {
-  
-private postDataService = inject(PostDataService);
+export class LuantiPage {
+
+  private postDataService = inject(PostDataService);
 
   protected readonly postsMetaData = toSignal(this.LoadPostMetadata(), {initialValue: []})
 
   private LoadPostMetadata()
   {
-    return this.postDataService.loadPostsMetadata("scratch");
+    return this.postDataService.loadPostsMetadata("luanti");
   }
 }

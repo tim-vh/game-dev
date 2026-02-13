@@ -1,15 +1,8 @@
 <div class="flex">
-    <aside class="w-180 mr-8">
-        <h1 class="text-xl text-gray-500 font-bold mb-2">Links</h1>
-        <ul>
-            <li>
-                <a class="text-gray-400" target="_blank" href="https://scratch.mit.edu">Scratch website</a>
-            </li>
-            <li>
-                <a class="text-gray-400" target="_blank" href="https://projects.raspberrypi.org/nl-NL/technology/scratch">Raspberry pi scratch projecten</a>
-            </li>
-        </ul>
-    </aside>
+    <app-links-aside class="w-180 mr-8">
+        <app-links-aside-item url="https://scratch.mit.edu" text="Scratch website"></app-links-aside-item>
+        <app-links-aside-item url="https://projects.raspberrypi.org/nl-NL/technology/scratch" text="Raspberry pi scratch projecten"></app-links-aside-item>
+    </app-links-aside>
     <div>
         <h1 class="text-2xl text-gray-600 font-bold">Scratch</h1>
         <app-posts-overview [postsMetaData]="postsMetaData()"></app-posts-overview>
