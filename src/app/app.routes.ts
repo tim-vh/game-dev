@@ -4,6 +4,7 @@ import { HomePage } from './pages/home-page/home-page';
 import { ScratchPage } from './pages/scratch-page/scratch-page';
 import { LuantiPage } from './pages/luanti-page/luanti-page';
 import { MakecodeArcadePage } from './pages/makecode-arcade-page/makecode-arcade-page';
+import { RobloxPage } from './pages/roblox-page/roblox-page';
 
 export const routes: Routes = [
     {
@@ -21,6 +22,10 @@ export const routes: Routes = [
     {
         path: 'makecode-arcade',
         component: MakecodeArcadePage
+    },
+    {
+        path: 'roblox',
+        component: RobloxPage
     },
     {
         path: 'posts/:folderName/:postName',
