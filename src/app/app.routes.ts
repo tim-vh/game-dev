@@ -3,6 +3,7 @@ import { PostDetails } from './posts/post-details/post-details';
 import { HomePage } from './pages/home-page/home-page';
 import { ScratchPage } from './pages/scratch-page/scratch-page';
 import { LuantiPage } from './pages/luanti-page/luanti-page';
+import { MakecodeArcadePage } from './pages/makecode-arcade-page/makecode-arcade-page';
 
 export const routes: Routes = [
     {
@@ -16,6 +17,10 @@ export const routes: Routes = [
     {
         path: 'luanti',
         component: LuantiPage
+    },
+    {
+        path: 'makecode-arcade',
+        component: MakecodeArcadePage
     },
     {
         path: 'posts/:folderName/:postName',
