@@ -1,0 +1,63 @@
+---
+layout: single
+title:  "Luanti minimal game"
+date:   2025-04-14 09:34:27 +0200
+categories: luanti
+excerpt: Maak een basis game in Luanti die werkt met de standaard mapgen.
+header:
+  teaser: /assets/teasers/luanti-minimal-game.png
+---
+
+Maak een basis game in Luanti die werkt met de standaard mapgen.
+
+## Benodigdheden
+
+-   [Visual studio code](https://https://code.visualstudio.com/)
+-   [Luanti Tools extension](https://marketplace.visualstudio.com/items/?itemName=GreenXenith.minetest-tools)
+
+## Game toevoegen
+
+Open de Luanti map met visual studio code en voer het commando (met F1 toets) `Luanti Tools: New Game Project` uit. Geef de game bijvoorbeeld de naam `minimal`.
+
+## Mod toevoegen
+
+Voer het commando `Luanti Tools: New Mod Project` uit. Kies de map voor de toegevoegde game (`/games/minimal/mods`) en geef een naam op voor de mod, bijvoorbeeld `basic`.
+
+## Nodes registeren
+
+De standaard map generators hebben drie verschillende nodes nodig. Dit zijn een 'stone', een 'water' en 'river water' node. Voeg in de `textures` map van de mod voor elk node type een texture toe, bijvoorbeeld een .png afbeelding. 
+
+Registreer vervolgens de nodes in de `init.lua` file:
+
+```lua
+core.register_node("basic:stone", {
+    description = "stone",
+    tiles = {"stone.png"},
+})
+
+core.register_node("basic:water", {
+    description = "water",
+    tiles = {"water.png"},
+})
+
+core.register_node("basic:river_water", {
+    description = "river water",
+    tiles = {"river_water.png"},
+})
+```
+
+> ℹ️ Let op dat de prefix (in dit geval `basic:`) dezelfde naam moet hebben als de naam van de mod.
+
+Voeg vervolgens aliassen toe zodat mapgen weet welke nodes die kan gebruiken:
+
+```lua
+core.register_alias("mapgen_stone", "basic:stone")
+core.register_alias("mapgen_water_source", "basic:water")
+core.register_alias("mapgen_river_water_source", "basic:river_water")
+```
+
+Nu kun je een nieuwe game starten in Luanti
+
+Voorbeeldcode: [https://github.com/tim-vh/game-dev/tree/main/examples/luanti/games/minimal](https://github.com/tim-vh/game-dev/tree/main/examples/luanti/games/minimal)
+
+![Luanti minimal game](/assets/images/luanti/luanti-minimal-game.png)
