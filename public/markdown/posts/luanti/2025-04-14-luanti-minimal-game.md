@@ -17,11 +17,11 @@ Maak een basis game in Luanti die werkt met de standaard mapgen.
 
 ## Game toevoegen
 
-Voeg een map `/games/` toe aan de luanti map als deze nog niet bestaat. Voeg daarna een nieuwe map toe in de `/games/` map van luanti bijvoorbeeld `minimal`. Open de map in VsCode en voer het commando (met F1 toets) `Luanti Tools: New Game Project` uit.
+Open de Luanti map met visual studio code en voer het commando (met F1 toets) `Luanti Tools: New Game Project` uit. Geef de game bijvoorbeeld de naam `minimal`.
 
 ## Mod toevoegen
 
-Voeg een nieuwe map toe in de de map `mods` van de aangemaakt game, bijvoorbeeld `basic`. Open de map in VsCode en voer het commando `Luanti Tools: New Mod Project` uit.
+Voer het commando `Luanti Tools: New Mod Project` uit. Kies de map voor de toegevoegde game (`/games/minimal/mods`) en geef een naam op voor de mod, bijvoorbeeld `basic`.
 
 ## Nodes registeren
 
@@ -45,6 +45,8 @@ core.register_node("basic:river_water", {
     tiles = {"river_water.png"},
 })
 ```
+
+> ℹ️ Let op dat de prefix (in dit geval `basic:`) dezelfde naam moet hebben als de naam van de mod.
 
 Voeg vervolgens aliassen toe zodat mapgen weet welke nodes die kan gebruiken:
 
