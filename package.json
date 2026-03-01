@@ -7,7 +7,8 @@
     "prebuild": "ts-node ./tools/markdown-indexer/src/index.ts ./public/markdown/posts/ ./public/data/markdown/posts.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "ng deploy --cname=tim-vh.dev"
   },
   "prettier": {
     "printWidth": 100,
@@ -43,6 +44,7 @@
     "@angular/compiler-cli": "^21.1.0",
     "@tailwindcss/postcss": "^4.1.12",
     "@tailwindcss/typography": "^0.5.19",
+    "angular-cli-ghpages": "^3.0.2",
     "jsdom": "^27.1.0",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.1.12",
