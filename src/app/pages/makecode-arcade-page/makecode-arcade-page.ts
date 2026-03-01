@@ -6,7 +6,7 @@ import { PostDataService } from '../../posts/post-data-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
-  selector: 'app-makecode-arcade',
+  selector: 'app-makecode-arcade-page',
   imports: [LinksAside, LinksAsideItem, PostsOverview],
   templateUrl: './makecode-arcade-page.html',
   styleUrl: './makecode-arcade-page.css',

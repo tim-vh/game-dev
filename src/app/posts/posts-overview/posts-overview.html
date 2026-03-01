@@ -1,11 +1,15 @@
-<div class="grid grid-cols-4 gap-4">
-    @for (post of postsMetaData; track $index) {
+<div class="@container">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-4">
+        @for (post of postsMetaData; track $index) {
         <article class="flex flex-col content-center relative">
-            <img class="w-full rounded-sm" [src]="post.attributes.header.teaser" alt="teaser for {{post.attributes.title}}" />
+            <img class="w-full rounded-sm" [src]="post.attributes.header.teaser"
+                alt="teaser for {{post.attributes.title}}" />
             <h1 class="text-xl text-cyan-700 underline">
-                <a class="before:absolute before:inset-0" href="/posts/{{post.folder}}/{{post.fileName}}">{{post.attributes.title}}</a>
+                <a class="before:absolute before:inset-0"
+                    href="/posts/{{post.folder}}/{{post.fileName}}">{{post.attributes.title}}</a>
             </h1>
             <p>{{post.attributes.excerpt}}</p>
         </article>
-    }
+        }
+    </div>
 </div>
