@@ -22,13 +22,17 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "nl.json",
+                "input": "node_modules/scratchblocks/locales"
               }
             ],
             "scripts": [
               "node_modules/prismjs/prism.js",
               "node_modules/prismjs/components/prism-lua.min.js",
-              "assets/js/site.js",
-              "assets/js/scratchblocks-3.6.4/scratchblocks.min.js"
+              "node_modules/scratchblocks/build/scratchblocks.min.js",
+              "javascript/render-scratchblocks.js"
             ],
             "styles": [
               "src/styles.css",
