@@ -22,3 +22,6 @@
 
 !mods/tools/
 !mods/tools/**
+
+!mods/easter/
+!mods/easter/**
