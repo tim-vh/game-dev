@@ -3,12 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "prestart": "npm run index-markdown",
     "start": "ng serve",
-    "prebuild": "ts-node ./tools/markdown-indexer/src/index.ts ./public/markdown/posts/ ./public/data/markdown/posts.json",
+    "prebuild": "npm run index-markdown",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --cname=tim-vh.dev"
+    "deploy": "ng deploy --cname=tim-vh.dev",
+    "index-markdown": "ts-node ./tools/markdown-indexer/src/index.ts ./public/markdown/posts/ ./public/data/markdown/posts.json"
   },
   "prettier": {
     "printWidth": 100,
