@@ -17,7 +17,7 @@ Voeg een nieuwe mod toe met de naam `easter` in de mods folder van luanti. Hierv
 
 ## Item registreren
 
-Eerst registreren we een nieuw item dat in de luanti game. Plaats deze code in `init.lua` van je `easter`-mod. Voeg een afbeelding `white_egg.png` toe in de `textures` map. Deze afbeelding wordt gebruikt om het item in de game te tonen.
+Eerst registreren we een nieuw item in de luanti game. Plaats deze code in `init.lua` van je `easter` mod. Voeg een afbeelding `white_egg.png` toe in de `textures` map. Deze afbeelding wordt gebruikt om het item in de game te tonen.
 
 ```lua
 core.register_craftitem("easter:white_egg",{
@@ -26,9 +26,9 @@ core.register_craftitem("easter:white_egg",{
 })
 ```
 
-Herlaad de wereld (of start de server opnieuw) en controleer of je het item aan de game is toegevoegd. Dit kan door het het aan jezelf te geven met het `/give`/ command. Dit kan op de volgende manier:
+Herstart het spel en controleer of je het item aan de game is toegevoegd. Dit kan door het het aan jezelf te geven met het `/give`/ command. Dit kan op de volgende manier:
 
-- Geef jezelf rechten om het commando uit te voeren met `/grantme give`
+- Geef jezelf rechten om het commando uit te voeren met `/grantme give` (of `grantme all` om alle rechten te krijgen)
 - Geeft jezelf het item met `/giveme easter:white_egg`
 
 Als het goed is heb je nu het item in je inventory.
@@ -47,11 +47,11 @@ core.after(10, function()
 end)
 ```
 
-Start het spel opnieuw en controleer of het ei is toegevoegd om de aangegeven plek. Als je in het spel op de 'F5' toets druk kun je zien op welke locatie je bent. 
+Start het spel opnieuw en controleer of het ei is toegevoegd op de aangegeven plek. Als je in het spel op de 'F5' toets druk kun je zien op welke locatie je bent. 
 
 ## Item op een random plek plaatsen
 
-Om het zoeken spannend te maken gebruiken we willekeurige coördinaten. Met `math.random` een willekeurig getal genereren tussen de opgegeven grenzen. In dit voorbeeld laten we een ei op een hoogte van 20 spawnen en willekeurig binnen een 200×200 blokken veld.
+Om het zoeken spannend te maken gebruiken we willekeurige coördinaten. Met `math.random` kun je een willekeurig getal genereren tussen de opgegeven grenzen. In dit voorbeeld laten we een ei op een hoogte van 20 spawnen en willekeurig binnen een 200×200 blokken veld.
 
 ```lua
 core.after(10, function()
@@ -87,7 +87,7 @@ Door de `for` worden er nu 500 eieren toegevoegd aan het spel. Test de code uit 
 
 ## Scores toevoegen
 
-Gebruik de bestaande `scores` mod om punten bij te houden. Voeg `scores` toe aan de depends-lijst in `mod.conf` van je mod:
+Gebruik de bestaande `scores` mod om punten bij te houden door deze mod via `Select mods` -> `Find more mods` te installeren. Voeg `scores` toe aan de depends-lijst in `mod.conf` van je mod:
 
 ```text
 depends = scores
@@ -117,7 +117,7 @@ core.register_craftitem("easter:white_egg",{
 })
 ```
 
-De functie bij `on_pickup` wordt uitgevoegd wanneer een item wordt opgepakt. In de functie kijken we eerst of het item door een speler wordt opgepakt. Als dat zo is verhogen we de score met 1. Daarna wordt het opgepakt item toegevoegd aan de inventory van de speler. Bij `on_drop` wordt hetzelfde gedaan maar verliest de speler een punt.
+De functie bij `on_pickup` wordt uitgevoegd wanneer een item wordt opgepakt. In de functie kijken we eerst of het item door een speler wordt opgepakt. Als dat zo is verhogen we de score met 1. Daarna wordt het opgepakte item toegevoegd aan de inventory van de speler. Bij `on_drop` wordt hetzelfde gedaan maar verliest de speler een punt.
 
 ## Items uit het spel verwijderen
 
