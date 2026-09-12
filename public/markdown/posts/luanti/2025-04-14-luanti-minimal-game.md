@@ -12,16 +12,43 @@ Maak een basis game in Luanti die werkt met de standaard mapgen.
 
 ## Benodigdheden
 
--   [Visual studio code](https://https://code.visualstudio.com/)
--   [Luanti Tools extension](https://marketplace.visualstudio.com/items/?itemName=GreenXenith.minetest-tools)
+-   [Luanti game ](https://www.luanti.org/en/downloads/)
+-   [Visual studio code](https://https://code.visualstudio.com/) (of een andere code editor)
+
+## Data directory openen
+
+Om een game of een mod toe te voegen aan Luanti moeten we bestanden en mappen toevoegen aan de Luanti 'User data directory'. Om dit de doen gaan we deze directory openen met Visual studio code. De locatie van deze map kun je vinden door Luanti op te starten en te gaan naar het tabblad 'About'. Klik vervolgens op de knop 'Open User Data Directory'.
+
+![Open data directory](/assets/images/luanti/luanti-open-user-data-directory.png)
+
+Kijk (of kopieer) wat het pad is van de directoy, bijvoorbeeld `C:\Users\Gebruiker\AppData\Roaming\Minetest`. Open vervolgens Visual studio code en open de map (File > Open folder...). In de file explorer zie je dan de volgende bestandsstructuur:
+
+![Open data directory](/assets/images/luanti/luanti-vscode-user-directory.png)
 
 ## Game toevoegen
 
-Open de Luanti map met visual studio code en voer het commando (met F1 toets) `Luanti Tools: New Game Project` uit. Geef de game bijvoorbeeld de naam `minimal`.
+Voeg een map 'games' toe als deze er nog niet is. Voeg daarna in de map 'games' een map toe met als naam de naam van de game, bijvoorbeeld 'minimal'. Plaats hierin een bestand met de naam 'game.conf' en zit hierin de volgende inhoud:
+
+```
+name = Minimal
+author = 
+description = 
+```
+
+Start luanti opnieuw op en kijk of de game is toegevoegd aan de onderin in de 'Start Game' tab. 
 
 ## Mod toevoegen
 
-Voer het commando `Luanti Tools: New Mod Project` uit. Kies de map voor de toegevoegde game (`/games/minimal/mods`) en geef een naam op voor de mod, bijvoorbeeld `basic`.
+voeg een map 'mods' toe aan de map van de game. Voeg daarna in de map 'mods' een map toe met als naam de naam van de mod, bijvoorbeeld 'basic'. Plaats hierin een bestand met de naam 'mod.conf' en zit hierin de volgende inhoud:
+
+```
+name = basic
+description = 
+depends = 
+```
+
+Voeg daarna een bestand 'init.lua' toe aan de map van de mod. Hierin kan de code voor de mod worden toegevoegd. Voeg daarna een map 'textures' toe aan de mod map. Hierin kunnen we "afbeeldingen" plaatsen voor de mod.
+
 
 ## Nodes registeren
 
