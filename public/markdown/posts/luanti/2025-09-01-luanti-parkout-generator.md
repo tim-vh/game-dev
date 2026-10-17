@@ -12,14 +12,22 @@ Maak een mod in Luanti die automatisch een parkour genereert wanneer je het chat
 
 ## Benodigdheden
 
--   [Visual Studio Code](https://code.visualstudio.com/)
--   [Luanti Tools extension](https://marketplace.visualstudio.com/items/?itemName=GreenXenith.minetest-tools)
+-   [Luanti game ](https://www.luanti.org/en/downloads/)
+-   [Visual studio code](https://https://code.visualstudio.com/) (of een andere code editor)
+
+## Data directory openen
+
+Om een game of een mod toe te voegen aan Luanti moeten we bestanden en mappen toevoegen aan de Luanti 'User data directory'. Om dit de doen gaan we deze directory openen met Visual studio code. De locatie van deze map kun je vinden door Luanti op te starten en te gaan naar het tabblad 'About'. Klik vervolgens op de knop 'Open User Data Directory'.
+
+![Open data directory](/assets/images/luanti/luanti-open-user-data-directory.png)
+
+Kijk (of kopieer) wat het pad is van de directoy, bijvoorbeeld `C:\Users\Gebruiker\AppData\Roaming\Minetest`. Open vervolgens Visual studio code en open de map (File > Open folder...). In de file explorer zie je dan de volgende bestandsstructuur:
+
+![Open data directory](/assets/images/luanti/luanti-vscode-user-directory.png)
 
 ## Mod toevoegen
 
-Voeg een nieuwe map toe in de `mods` map van je game, bijvoorbeeld `parkour`. Open deze map in VSCode en voer het commando `Luanti Tools: New Mod Project` uit.
-
-Maak een `mod.conf` bestand aan met de volgende inhoud:
+Voeg in de map 'mods' een map toe met als naam de naam van de mod, bijvoorbeeld 'parkour'. Plaats hierin een bestand met de naam 'mod.conf' en zit hierin de volgende inhoud:
 
 ```
 name = parkour
@@ -27,6 +35,8 @@ description = Genereert een parkour
 depends = default
 optional_depends =
 ```
+
+Voeg daarna een bestand 'init.lua' toe aan de map van de mod. Hierin kan de code voor de mod worden toegevoegd. 
 
 ## Chatcommando toevoegen
 
@@ -145,6 +155,8 @@ player:respawn()
 ```
 
 ## Start je parkour
+
+Maak een nieuwe wereld aan in de 'minetest' game. Klik vervolgens op 'Select Mods' en klik daarna op de parkour mod en vink 'enabled' aan.
 
 Start je game in Luanti, typ `/start` in de chat en probeer het parkour uit!
 
