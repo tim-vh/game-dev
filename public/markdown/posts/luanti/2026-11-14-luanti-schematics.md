@@ -97,3 +97,5 @@ Deze keer gebruiken we het commando 'create'. Plaats in het commando de volgende
 ```
 
 Hiermee maken we een schematic die begint op positie x = 1, y = 9, z = 1 en die 10 x 10 x 10 blokken groot is. Het bestand wordt opgeslagen in de map van de wereld die op dat moment gespeeld is. Deze is bijvoorbeeld in de luanti map te vinden in 'worlds/world1' met de naam test.mts.
+
+Het complete voorbeeld is hier te vinden: [https://github.com/tim-vh/game-dev/blob/main/examples/luanti/mods/schematics/init.lua](https://github.com/tim-vh/game-dev/blob/main/examples/luanti/mods/schematics/init.lua)
