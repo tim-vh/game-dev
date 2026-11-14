@@ -3,11 +3,22 @@
         "core"
     ],
     "cSpell.words": [
+        "emax",
+        "emin",
         "luanti",
         "Luanti",
         "makecode",
         "Makecode",
+        "mapgen",
+        "maxp",
+        "minp",
+        "modname",
+        "modpath",
         "roblox",
-        "scratchblocks"
+        "schems",
+        "scratchblocks",
+        "singlenode",
+        "vmanip",
+        "voxelmanip"
     ]
 }

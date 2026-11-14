@@ -25,3 +25,9 @@
 
 !mods/easter/
 !mods/easter/**
+
+!mods/mapgen/
+!mods/mapgen/**
+
+!mods/schematics/
+!mods/schematics/**

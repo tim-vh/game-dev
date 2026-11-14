@@ -43,7 +43,7 @@ De on_activate functie wordt uitgevoerd wanneer de entiteit wordt gespawnd. Hier
 
 ## Entity spawnen met een chatcommando
 
-Om de enity in de game te kunnen spawnen kan de volgende code worden gebruikt:
+Om de entity in de game te kunnen spawnen kan de volgende code worden gebruikt:
 
 ```lua
 core.register_chatcommand("spawn", {
